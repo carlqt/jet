@@ -66,7 +66,7 @@ func GenerateDSN(dsn, schema, destDir string, templates ...template.Template) er
 		return fmt.Errorf("failed to get '%s' schema metadata: %w", schema, err)
 	}
 
-	dirPath := path.Join(destDir, cfg.Database)
+	dirPath := path.Join(destDir)
 
 	err = template.ProcessSchema(dirPath, schemaMetadata, generatorTemplate)
 	if err != nil {
